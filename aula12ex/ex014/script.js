@@ -3,18 +3,20 @@ function carregar(){
     var img = document.getElementById('imagem')
     var data = new Date()
     var hora= data.getHours()
-
     msg.innerHTML =`Agora são ${hora} Horas`;
-    
     if (hora >= 0 && hora < 12){
-        img.scr = 'ftmanha.png'
+        document.body.style.background = '#ffd760'
+        img.src = 'ftmanha.png'
+        //Bom dia
     }
     else if (hora >= 12 && hora < 18){
-        img.scr = 'fttarde.png'
+        document.body.style.background = '#ec9648'
+        img.src = 'fttarde.png'
         //Boa tarde
     }
     else{
-        img.scr = 'ftnoite.png'
+        document.body.style.background ='#223848'
+        img.src = 'ftnoite.png'
         //Boa noite
     }
 }
