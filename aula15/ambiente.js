@@ -1,5 +1,5 @@
 let num = [5, 8, 2, 9, 3]
-num [4] = 99 //coloca numero na posiç~ao 7
+num [4] = 99 //coloca numer o na posiç~ao 7
 num.push(88) //adiciona número na últma posição
 
 
