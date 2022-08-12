@@ -16,11 +16,6 @@
             tab.appendChild(item)
             c++
         }
-
-        /*for(var c = 1; c <= 10; c +=1){
-            var m = n*c
-                res.innerHTML = `${c} ${m}` 
-            }*/
     }
 }
     
