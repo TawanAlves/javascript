@@ -10,3 +10,18 @@ const client2Saldo = 0;
 
 console.log(cliente1Nome);
 */
+class Pessoa{
+  nome;
+  idade;
+  peso;
+}
+ 
+let pessoa1 = new Pessoa()
+let pessoa2 = new Pessoa()
+
+pessoa1.nome ='Jorge'
+pessoa1.idade = 40
+pessoa1.peso = 84.5
+
+console.log(pessoa1)
+console.log(pessoa2)
