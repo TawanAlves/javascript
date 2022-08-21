@@ -1,0 +1,70 @@
+@charset UTF-8;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+}
+body{
+  background-color: #1a365d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+}
+
+#calculadora{
+  padding: 0.5em;
+  width: 400px;
+  background-color: #c5cfd9; /*#c4c4c4*/
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+#calculadora h3{
+  font-size: .8em;
+  font-weight: 300;
+  color: #4c4c4d; /* #666*/
+}
+#operacoes {
+  text-align: right;
+}
+#operacao-previa, #operacao-atual{
+  padding: .2em;
+  overflow-wrap: break-word;
+  min-height: 1.6em;
+}
+#operacao-previa{
+  color: #777;
+}
+#operacao-atual{
+  font-size: 3em;
+  font-weight: 700;
+}
+#containerbt{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 3px;
+}
+#containerbt button{
+  border: 1px solid transparent;
+  border-radius: 0;
+  height: 4em;
+  font-size: 1.2em;
+  background-color: #dbdbdb;
+  cursor: pointer; /* Ponteiro do mouse aprace em cima da calculadora*/
+}
+#containerbt .numero{
+  background-color: #f3f3f3;
+}
+#containerbt button:hover{
+  background-color: #bababa;
+  border-color: #999;
+}
+#containerbt #btigual{
+  grid-column: span 2;
+  background-color: #891fd5;
+}
+#containerbt #btigual:hover{
+  background-color: #4B0082;
+}
