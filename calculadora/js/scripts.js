@@ -20,21 +20,53 @@ class Calculator{
 
   //operações da calculadora
   processOperation (operation){
+    //checar se o valor atual está vazio
+    if(this.operacaoatualtxt.innerText === "" && operation !== "C"){
+      //muda operação
+      if(operacaopreviatxt.innerText !== ""){
+        this.changeOperation(operation)
+
+      }return;
+    }
     //pegar valores atuais e anteriores
     let operationValue;
-    let anterior = +this.operacaopreviatxt.innerText;
+    let anterior = +this.operacaopreviatxt.innerText.split(" ")[0];
     let atual = +this.operacaoatualtxt.innerText;
 
-    switch(operation){
-      case "+":
+  switch(operation){
+    case "+":
       operationValue = anterior + atual;
       this.updateScreen(operationValue, operation, atual, anterior);
-        break;
-        default:
-          return;
+    break;
+    case "-":
+      operationValue = anterior - atual;
+      this.updateScreen(operationValue, operation, atual, anterior);
+    break;
+    case "/":
+      operationValue = anterior / atual;
+      this.updateScreen(operationValue, operation, atual, anterior);
+    break;
+    case "*":
+      operationValue = anterior * atual;
+      this.updateScreen(operationValue, operation, atual, anterior);
+    break;
+    case "Del":
+      this.processoDelOperator();
+    break;
+    case "CE":
+      this.processolimparoperacaoatual();
+    break;
+    case "C":
+      this.processolimpar();
+    break;
+    case "=":
+      this.processoIgual();
+    break;
+    default:
+    return;
 
+      }
     }
-  }
   //mudando valores da tela da calculadora
   updateScreen(
     operationValue = null, 
@@ -54,6 +86,32 @@ class Calculator{
         this.operacaoatualtxt.innerText = "";
       }
   }
+  //mudança de operações
+  changeOperation(operation){
+    const mathOperations= ["*","/","+","-"];
+    if(!mathOperations.includes(operation)){
+      return;
+    }
+    this.operacaopreviatxt.innerText = this.operacaopreviatxt.innerText.slice(0, -1) + operation;
+  }
+  //deletar ultimo digito
+  processoDelOperator(){
+    this.operacaoatualtxt.innerText = this.operacaoatualtxt.innerText.slice(0,-1);
+  }
+  //limpar visor de baixo
+  processolimparoperacaoatual(){
+    this.operacaoatualtxt.innerText = "";
+  }
+  //limpar calculdora inteira
+  processolimpar(){
+    this.operacaoatualtxt.innerText = "";
+    this.operacaopreviatxt.innerText = "";
+  }
+  processoIgual(){
+    const operation =operacaopreviatxt.innerText.split(" ")[1];
+    this.processOperation(operation);
+  }
+
 }
 const calc= new Calculator(operacaopreviatxt, operacaoatualtxt);
 
