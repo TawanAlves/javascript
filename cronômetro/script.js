@@ -20,7 +20,8 @@ function reset(){
 }
 
 function start(){
- intervalo =  setInterval(contar, 1000);
+   contar()
+ intervalo =  setInterval(contar, 100);
 }
 
 function stop(){
@@ -33,6 +34,7 @@ function contar(){
       minutos++;
       document.getElementById('minutos').innerText = mostrardois(minutos);
       segundos = 0;
+      document.getElementById('segundos').innerText=mostrardois(segundos);
    }
   
 }
